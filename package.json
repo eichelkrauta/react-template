@@ -20,12 +20,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --testPathIgnorePatterns=storyshots.test.ts",
+    "test:ci": "react-scripts test --testPathIgnorePatterns=storyshots.test.ts --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**\"",
     "lint:fix": "eslint \"src/**\" --fix",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "storyshots": "concurrently -k -s last \"BROWSER=none npm run storybook\" \"react-scripts test --testPathPattern=storyshots.test.ts --watchAll=false\""
+    "storyshots": "concurrently -k -s last \"BROWSER=none npm run storybook\" \"react-scripts test --testPathPattern=storyshots.test.ts\"",
+    "storyshots:ci": "concurrently -k -s last \"BROWSER=none npm run storybook\" \"react-scripts test --testPathPattern=storyshots.test.ts --watchAll=false\""
   },
   "eslintConfig": {
     "extends": [
