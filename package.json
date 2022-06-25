@@ -19,6 +19,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:nonprod": "./scripts/build-env.sh nonprod",
+    "build:prod": "./scripts/build-env.sh prod",
     "test": "react-scripts test --testPathIgnorePatterns=storyshots.test.ts",
     "test:ci": "react-scripts test --testPathIgnorePatterns=storyshots.test.ts --watchAll=false",
     "eject": "react-scripts eject",
@@ -74,6 +76,7 @@
     "@typescript-eslint/parser": "^5.29.0",
     "babel-plugin-named-exports-order": "^0.0.2",
     "concurrently": "^7.2.2",
+    "env-cmd": "^10.1.0",
     "eslint": "^8.18.0",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-storybook": "^0.5.13",
