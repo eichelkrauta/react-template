@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+BOLD=$(tput bold)
+RED=$(tput setaf 1)
+RESET=$(tput sgr0)
+
+set -euo pipefail
+
+npm run lint:ci
+npm run test:ci
+npm run storyshots:ci

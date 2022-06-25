@@ -18,6 +18,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "install-hooks": "cp -r ./hooks/ .git/",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:nonprod": "./scripts/build-env.sh nonprod",
@@ -25,13 +26,13 @@
     "test": "react-scripts test --testPathIgnorePatterns=storyshots.test.ts",
     "test:ci": "react-scripts test --testPathIgnorePatterns=storyshots.test.ts --watchAll=false",
     "eject": "react-scripts eject",
-    "lint": "eslint \"src/**\"",
     "lint:fix": "eslint \"src/**\" --fix",
+    "lint:ci": "eslint \"src/**\"",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "storyshots": "react-scripts test --testPathPattern=storyshots.test.ts",
     "storyshots:update": "concurrently --handle-input -n sb,test \"BROWSER=none npm run storybook\" \"react-scripts test --testPathPattern=storyshots.test.ts -u\"",
-    "storyshots:ci": "concurrently -k -s last \"BROWSER=none npm run storybook\" \"react-scripts test --testPathPattern=storyshots.test.ts --watchAll=false\""
+    "storyshots:ci": "concurrently -k -n sb,test -s command-test \"BROWSER=none npm run storybook\" \"react-scripts test --testPathPattern=storyshots.test.ts --watchAll=false\""
   },
   "eslintConfig": {
     "extends": [
