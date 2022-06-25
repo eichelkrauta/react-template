@@ -4,7 +4,7 @@ import { Base64ScreenShotOptions } from "puppeteer"
 
 const getMatchOptions = () => {
     return {
-        failureThreshold: 0.2,
+        failureThreshold: 0,
         failureThresholdType: "percent" as "percent" | "pixel" | undefined,
         customSnapshotsDir: `${__dirname}/../.storybook/__snapshots__`
     }
